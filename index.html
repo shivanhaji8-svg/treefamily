@@ -418,7 +418,11 @@
       }
     });
     // ئەگەر هیچ وێنەیەک نەبوو، وێنەی دیفۆڵت دابنێ
-   
+    if (images.length === 0) {
+      images.push({ src: 'https://images.pexels.com/photos/1445416/pexels-photo-1445416.jpeg?auto=compress&cs=tinysrgb&w=800', alt: 'دار' });
+    }
+    return images;
+  }
 
   function buildSlideshow() {
     const images = getImagesFromPosts();
@@ -569,10 +573,10 @@
     }
     let cost = 0;
     if (n >= 1 && n <= 20) cost = n * 700;
-    else if (n <= 100) cost = n * 900;
-    else if (n <= 200) cost = n * 700;
-    else if (n <= 400) cost = n * 680;
-    else cost = n * 680;
+    else if (n <= 100) cost = n * 480;
+    else if (n <= 200) cost = n * 550;
+    else if (n <= 400) cost = n * 380;
+    else cost = n * 320;
     
     priceSpan.innerText = cost.toLocaleString() + " IQD";
   }
