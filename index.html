@@ -1,0 +1,1472 @@
+<!DOCTYPE html>
+<html lang="ku" dir="rtl">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Tree Family | دارین بنەمالا</title>
+
+<link rel="icon" type="image/x-icon" href="images/tree.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@100..900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+
+/* ================= RESET ================= */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+}
+.noto-kufi-arabic-<uniquifier> {
+  font-family: "Noto Kufi Arabic", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
+body{
+  font-family: "Noto Kufi Arabic", sans-serif;
+background:#ffffff;
+color:#234b35;
+overflow-x:hidden;
+}
+
+/* ================= HERO ================= */
+
+.hero-section{
+min-height:100vh;
+position:relative;
+display:flex;
+align-items:center;
+justify-content:center;
+padding:2rem;
+overflow:hidden;
+
+background:
+linear-gradient(
+135deg,
+rgba(255,255,255,0.88),
+rgba(245,250,245,0.99)
+),
+url('images/artboard4-80.jpg');
+
+background-size:cover;
+background-position:center;
+}
+
+.hero-overlay{
+position:absolute;
+inset:0;
+
+background:
+radial-gradient(
+circle at top left,
+rgba(255,215,120,0.20),
+transparent 40%
+);
+}
+
+.hero-container{
+width:100%;
+max-width:1200px;
+
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:3rem;
+
+align-items:center;
+position:relative;
+z-index:2;
+}
+
+.hero-text h1{
+font-size:4.5rem;
+line-height:1.1;
+font-weight:900;
+margin-bottom:1rem;
+color:#234b35;
+}
+
+.hero-text h1 span{
+color:#c89b3c;
+}
+
+.hero-text p{
+font-size:1.15rem;
+color:rgba(35,75,53,0.75);
+line-height:2;
+max-width:550px;
+margin-bottom:2rem;
+}
+
+.hero-buttons{
+display:flex;
+gap:1rem;
+flex-wrap:wrap;
+}
+
+.hero-btn{
+padding:15px 30px;
+border-radius:50px;
+text-decoration:none;
+font-weight:700;
+transition:0.3s;
+font-size:1rem;
+}
+
+.hero-btn.primary{
+background:#c89b3c;
+color:white;
+}
+
+.hero-btn.secondary{
+border:1px solid rgba(35,75,53,0.15);
+background:white;
+backdrop-filter:blur(10px);
+color:#234b35;
+}
+
+.hero-btn:hover{
+transform:translateY(-4px);
+}
+
+.hero-image{
+position:relative;
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+.hero-image img{
+width:100%;
+max-width:480px;
+border-radius:35px;
+box-shadow:0 25px 60px rgba(0,0,0,0.10);
+object-fit:cover;
+border:3px solid rgba(35,75,53,0.08);
+}
+
+.hero-cards{
+position:absolute;
+bottom:-30px;
+display:flex;
+gap:1rem;
+flex-wrap:wrap;
+justify-content:center;
+}
+
+.hero-card{
+background:#ffffff;
+backdrop-filter:blur(15px);
+padding:1rem 1.4rem;
+border-radius:24px;
+border:1px solid rgba(35,75,53,0.08);
+min-width:150px;
+text-align:center;
+box-shadow:0 10px 30px rgba(0,0,0,0.05);
+}
+
+.hero-card h3{
+font-size:1.8rem;
+color:#c89b3c;
+margin-bottom:0.2rem;
+}
+
+.hero-card p{
+color:rgba(35,75,53,0.75);
+font-size:0.95rem;
+}
+
+/* ================= SECTION TITLE ================= */
+
+.section-title{
+text-align:center;
+font-size:2.3rem;
+font-weight:800;
+margin-bottom:1rem;
+color:#c89b3c;
+}
+
+.section-desc{
+text-align:center;
+max-width:700px;
+margin:auto;
+line-height:2;
+color:rgba(35,75,53,0.75);
+}
+
+/* ================= ABOUT ================= */
+
+.about-section{
+padding:7rem 1.5rem 4rem;
+}
+
+.about-grid{
+max-width:1100px;
+margin:auto;
+
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:1.5rem;
+margin-top:3rem;
+}
+
+.about-card{
+background:#8BDFDD;
+padding:2rem;
+border-radius:30px;
+transition:0.3s;
+border:1px solid rgba(35,75,53,0.08);
+box-shadow:0 10px 30px rgba(0,0,0,0.05);
+}
+
+.about-card:hover{
+transform:translateY(-6px);
+
+}
+
+.about-card i{
+font-size:2rem;
+color:#c89b3c;
+margin-bottom:1rem;
+}
+
+.about-card h3{
+margin-bottom:1rem;
+font-size:1.2rem;
+color:#234b35;
+}
+
+.about-card p{
+color:rgba(35,75,53,0.75);
+line-height:1.9;
+}
+
+/* ================= SLIDESHOW ================= */
+
+.slideshow-wrapper{
+  max-width:1000px;
+  margin:auto;
+  overflow:hidden;
+  border-radius:20px;
+  position:relative;
+  box-shadow:0 20px 50px rgba(0,0,0,0.15);
+  direction:ltr; /* ⭐ important fix for RTL */
+}
+
+.slideshow-track{
+
+  display:flex;
+  transition:transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change:transform;
+}
+
+.slide{
+  min-width:100%;
+  flex-shrink:0;
+}
+
+.slide img{
+  width:100%;
+  height:500px;
+  object-fit:cover;
+  display:block;
+  transition:transform 0.5s;
+}
+
+.slide:hover img{
+  transform:scale(1.05);
+}
+
+/* dots modern */
+.slideshow-dots{
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  margin-top:1rem;
+}
+
+.dot{
+  width:10px;
+  height:10px;
+  border-radius:50%;
+  border:none;
+  cursor:pointer;
+  background:#ccc;
+  transition:0.3s;
+}
+
+.dot.active{
+  background:#c89b3c;
+  transform:scale(1.4);
+}
+/* ================= GALLERY ================= */
+
+.gallery{
+padding:4rem 1rem;
+}
+
+.posts{
+max-width:1200px;
+margin:auto;
+
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(270px,1fr));
+gap:1.5rem;
+}
+
+.card{
+background:#ffffff;
+border-radius:14px;
+overflow:hidden;
+cursor:pointer;
+transition:0.3s;
+border:1px solid rgba(35,75,53,0.08);
+box-shadow:0 10px 30px rgba(0,0,0,0.05);
+}
+
+.card:hover{
+transform:translateY(-8px);
+}
+
+.card img{
+width:100%;
+aspect-ratio:1/1;
+object-fit:cover;
+}
+
+.card p{
+padding:1rem;
+text-align:center;
+font-weight:700;
+color:#234b35;
+}
+
+/* ================= PRICE ================= */
+
+.price-section{
+padding:5rem 1rem;
+}
+
+.price-box{
+max-width:800px;
+margin:auto;
+background:#ffffff;
+padding:2rem;
+border-radius:35px;
+border:1px solid rgba(35,75,53,0.08);
+box-shadow:0 10px 30px rgba(0,0,0,0.05);
+}
+
+.price-box input{
+width:100%;
+padding:16px;
+border:none;
+outline:none;
+border-radius:50px;
+font-family:'Cairo',sans-serif;
+font-size:1rem;
+margin-top:1rem;
+text-align:center;
+background:#f5f7f5;
+color:#234b35;
+}
+
+.price-display{
+margin-top:1.5rem;
+background:#c89b3c;
+color:white;
+padding:14px 28px;
+display:inline-block;
+border-radius:50px;
+font-weight:800;
+font-size:1.5rem;
+}
+
+.price-table{
+width:100%;
+margin-top:2rem;
+border-collapse:collapse;
+overflow:hidden;
+border-radius:20px;
+}
+
+.price-table th{
+background:#2f6b4f;
+padding:14px;
+color:white;
+}
+
+.price-table td{
+padding:14px;
+text-align:center;
+background:#f8faf8;
+border-bottom:1px solid rgba(35,75,53,0.05);
+color:#234b35;
+}
+/* ================= ناڤین عەسیرا ================= */
+    /* simple box */
+.box22 {
+  text-align: center;
+}
+
+/* typing text */
+.typing22 {
+  font-size: 40px;
+  font-weight: bold;
+  min-height: 60px;
+}
+
+/* colors cycle */
+.color1 {
+  color: #00ff88;
+}
+
+.color2 {
+  color: #ffcc00;
+}
+
+.color3 {
+  color: #00c3ff;
+}
+
+.color4 {
+  color: #ff4d6d;
+}
+
+.color5 {
+  color: #9d4edd;
+}
+
+.color6 {
+  color: #ff7b00;
+}
+
+.color7 {
+  color: #38b000;
+}
+
+.color8 {
+  color: #ff006e;
+}
+
+.color9 {
+  color: #3a86ff;
+}
+
+.color10 {
+  color: #23abb3;
+}
+
+/* cursor */
+.cursor22 {
+  display: inline-block;
+  width: 2px;
+  background: white;
+  margin-left: 5px;
+  animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+.sub22 {
+  margin-top: 15px;
+  font-size: 16px;
+  opacity: 0.7;
+}
+/* ================= FOOTER ================= */
+
+footer{
+margin-top:5rem;
+padding:4rem 1rem 2rem;
+text-align:center;
+
+background:
+linear-gradient(
+180deg,
+#f8faf8,
+#eef5ef
+);
+
+border-top:1px solid rgba(35,75,53,0.08);
+}
+
+.footer-logo{
+font-size:2rem;
+font-weight:900;
+color:#c89b3c;
+margin-bottom:0.5rem;
+}
+
+.footer-desc{
+color:rgba(35,75,53,0.7);
+margin-bottom:2rem;
+}
+
+.social-links{
+display:flex;
+justify-content:center;
+gap:1rem;
+flex-wrap:wrap;
+}
+
+.social-links a{
+padding:12px 24px;
+border-radius:50px;
+text-decoration:none;
+color:white;
+font-weight:700;
+transition:0.3s;
+}
+
+.fb{
+background:#1877f2;
+}
+
+.wa{
+background:#25d366;
+color:black !important;
+}
+
+.tt{
+background:black;
+}
+  .section-title3{
+    color: #234b35;
+    text-align: center;
+  }
+
+.social-links a:hover{
+transform:translateY(-4px);
+}
+
+.footer-copy{
+margin-top:2rem;
+font-size:0.9rem;
+color:rgba(35,75,53,0.5);
+}
+
+/* ================= MODAL ================= */
+
+.modal{
+display:none;
+position:fixed;
+inset:0;
+background:rgba(0,0,0,0.9);
+justify-content:center;
+align-items:center;
+z-index:9999;
+}
+
+.modal img{
+max-width:90%;
+max-height:90%;
+border-radius:20px;
+}
+
+.close-modal{
+position:absolute;
+top:20px;
+right:30px;
+font-size:45px;
+cursor:pointer;
+color:white;
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:900px){
+
+.hero-container{
+grid-template-columns:1fr;
+text-align:center;
+}
+
+.hero-text p{
+margin:auto auto 2rem;
+}
+
+.hero-buttons{
+justify-content:center;
+}
+
+.hero-text h1{
+font-size:2.8rem;
+}
+
+.hero-image img{
+max-width:340px;
+}
+
+.hero-cards{
+position:relative;
+bottom:auto;
+margin-top:1.5rem;
+}
+
+.slide img{
+height:418px;
+}
+
+}
+    .scramble-title{
+font-size:4.5rem;
+line-height:1.2;
+font-weight:900;
+margin-bottom:1rem;
+color:#234b35;
+}
+
+.scramble-text{
+color:#c89b3c;
+display:inline-block;
+min-width:320px;
+}
+
+.dud{
+opacity:0.45;
+color:#2f6b4f;
+}
+
+@media(max-width:900px){
+
+.scramble-title{
+font-size:2.8rem;
+}
+
+.scramble-text{
+min-width:auto;
+}
+    
+    
+
+</style>
+</head>
+
+<body>
+
+<!-- ================= HERO ================= -->
+
+<section class="hero-section">
+
+<div class="hero-overlay"></div>
+
+<div class="hero-container">
+
+<div class="hero-text">
+
+
+<h1 class="scramble-title"><span class="scramble-text">M<span class="dud">{</span><span class="dud">{</span>Qual<span class="dud">[</span>ty<span class="dud">/</span><span class="dud">_</span></span>
+<span class="scramble-text"></span>
+
+<br>
+
+دیزاینی دارەکان<br>
+خێزان
+</h1>
+    
+    
+    
+<p>
+دیزاینەکا تایبەت و مۆدێرن بۆ دارین بنەمالا وە ،
+بە شێوازێکی زۆر جوان و کوالیتی بەرز،
+بۆ 10 تا 1000 ناو.
+</p>
+
+<div class="hero-buttons">
+
+<a href="https://wa.me/9647515470405"
+class="hero-btn primary"
+target="_blank">
+WhatsApp
+</a>
+
+<a href="#gallery" class="hero-btn secondary">دیتنا کارێ مە&nbsp;</a>
+
+</div>
+
+</div>
+
+<div class="hero-image">
+
+<img src="images/Artboard3-80.jpg" alt="Tree Family">
+
+<div class="hero-cards">
+
+<div class="hero-card">
+<h3>1000+</h3>
+<p>ناو</p>
+</div>
+
+<div class="hero-card">
+<h3>20+</h3>
+<p>نمونە دار&nbsp;</p>
+</div>
+
+<div class="hero-card">
+<h3>1H</h3>
+<p>بەرسڤدان</p>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= ABOUT ================= -->
+<div>
+    
+    <div class="box22">
+
+  <div class="typing22">
+    <span id="text"></span>  خێرهاتی  <span class="cursor22"></span>
+  </div>
+
+  <div class="sub22">
+   
+  </div>
+
+</div>
+    
+    </div>
+<section class="about-section">
+
+<h2 class="section-title">
+ئەم چەوا کار دکەن</h2>
+
+<p class="section-desc">
+دیزاینی دارین بنەمالا بە شێوازێکی تایبەتی،
+مۆدێرن و زۆر جوان بۆ هەموو خێزانێک.
+</p>
+
+<div class="about-grid">
+
+<div class="about-card">
+<i class="fa-solid fa-tree"></i>
+<h3>دیزاینی تایبەت</h3>
+<p>
+هەر دارەک ب شێوازێکی تایبەتی دروست دکەن.
+</p>
+</div>
+
+<div class="about-card">
+<i class="fa-solid fa-crown"></i>
+<h3>کوالیتی بەرز</h3>
+<p>
+کوالیتی HD و شێوازێکی مۆدێرن.
+<br>ب JPG , PDF , هەرجورەک تەبڤیت<br>و ب قیاسین جیواز&nbsp;</p>
+</div>
+
+<div class="about-card">
+<i class="fa-solid fa-bolt"></i>
+<h3>لەزاتی کاری مەیە .</h3>
+<p>
+دیارکاران دەمێ کاری بو کەسێ بەرامبەر .</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= SLIDESHOW ================= -->
+<section class="slideshow-section">
+
+<h2 class="section-title">
+نمونا کارێ مە</h2>
+
+<div class="slideshow-wrapper">
+
+<div class="slideshow-track" id="track">
+
+<div class="slide">
+<img src="images/artboard1-80.jpg">
+<div class="slide-caption">
+🌳 دیزاینی تایبەتی دارین بنەمالا
+</div>
+</div>
+
+<div class="slide">
+<img src="images/artboard2-80.jpg">
+<div class="slide-caption">
+✨ شێوازێکی مۆدێرن و جوان
+</div>
+</div>
+
+<div class="slide">
+<img src="images/artboard3-80.jpg">
+<div class="slide-caption">
+🏛️ دیزاینی خێزانی تایبەت
+</div>
+</div>
+
+<div class="slide">
+<img src="images/Artboard4-80.jpg">
+<div class="slide-caption">
+💫 کوالیتی بەرز و دیزاینی جوان
+</div>
+</div>
+
+</div>
+
+</div>
+
+<div class="slideshow-dots" id="dots"></div>
+
+</section>
+
+<!-- ================= GALLERY ================= -->
+
+<section class="gallery" id="gallery">
+
+<h2 class="section-title">
+گەلەریا کارێ مە ...</h2>
+
+<div class="posts">
+
+<div class="card" onclick="openModal(this)">
+<img src="images/artboard1-80.jpg">
+<p>🌳 نموونەی 1</p>
+</div>
+
+<div class="card" onclick="openModal(this)">
+<img src="images/artboard2-80.jpg">
+<p>✨ نموونەی 2</p>
+</div>
+
+<div class="card" onclick="openModal(this)">
+<img src="images/artboard3-80.jpg">
+<p>🏛️ نموونەی 3</p>
+</div>
+
+<div class="card" onclick="openModal(this)">
+<img src="images/Artboard5-80.jpg">
+<p>💫 نموونەی 4</p>
+</div>
+
+  <div class="card" onclick="openModal(this)">
+<img src="images/Artboard6-80.jpg">
+<p>💫 نموونەی 5</p>
+</div>
+  
+  <div class="card" onclick="openModal(this)">
+<img src="images/Artboard7-80.jpg">
+<p>💫 نموونەی 6</p>
+</div>
+</div>
+
+</section>
+
+<!-- ================= PRICE ================= -->
+
+<section class="price-section">
+
+<h2 class="section-title3">
+وەرە میژویا بنەمالا خو بکە دیاری بو بنەمالاخوو</h2>
+<h2 class="section-title">
+حسابکردنا خەملاندنێ ٧٠٪</h2>
+
+<div class="price-box">
+
+<p class="section-desc">
+ژماتین ناڤا لدیف بنەمالاوە یان خیزاناوە&nbsp;</p>
+
+<input type="number" id="num" placeholder="45">
+
+<div style="text-align:center">
+<span class="price-display" id="price">پەیوەندی بکە باشتر تێگەهشتن&nbsp;</span>
+</div>
+
+<table class="price-table">
+
+<tr>
+<th>ژمارەی ناڤا</th>
+<th>بها</th>
+</tr>
+
+<tr>
+<td>10 حەتا 20</td>
+<td>10,000 IQD</td>
+</tr>
+
+<tr>
+<td>21 حەتا 50</td>
+<td>20,000 IQD</td>
+</tr>
+
+<tr>
+<td>51 حەتا 100</td>
+<td>&nbsp;500 IQD بۆ هەر ناوێک</td>
+</tr>
+
+<tr>
+<td>101 حەتا 199</td>
+<td>500 IQD بۆ هەر ناوێک</td>
+</tr>
+
+<tr>
+<td>200+</td>
+<td>پەیوەندی بکە بەرێز باشترە&nbsp;</td>
+</tr>
+
+</table>
+
+</div>
+
+</section>
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+<div class="footer-logo">
+🌳 Tree Family
+</div>
+
+<div class="footer-desc">
+دیزاینی تایبەتی دارەکانی خێزان بنەمالا&nbsp; دخمەتاوەداینە ب گونجاوترتن بها<br>زاخۆ / عباسیک کارکرن ب شێوازی ئونلاین</div>
+
+<div class="social-links">
+
+<a class="fb"
+href="https://facebook.com"
+target="_blank">
+Facebook
+</a>
+
+<a class="wa"
+href="https://wa.me/9647515470405"
+target="_blank">
+WhatsApp
+</a>
+
+<a class="tt"
+href="https://tiktok.com"
+target="_blank">
+TikTok
+</a>
+
+</div>
+
+<div class="footer-copy">
+© 2025 Tree Family / <p style="color: #c89b3c">Shivan Haji</p> &nbsp;</div>
+
+</footer>
+    سد
+
+<!-- ================= MODAL ================= -->
+
+<div class="modal" id="modal">
+
+<span class="close-modal" onclick="closeModal()">
+&times;
+</span>
+
+  <img id="modal-img">
+
+</div>
+
+<script>
+
+/* ================= PRICE ================= */
+
+const num = document.getElementById("num");
+const price = document.getElementById("price");
+
+num.addEventListener("input", ()=>{
+
+let n = parseInt(num.value);
+
+if(isNaN(n)){
+price.innerText = "0 IQD";
+return;
+}
+
+let total = 0;
+
+if(n >= 10 && n <= 20){
+total = 10000;
+}
+
+else if(n >= 21 && n <= 50){
+total = 20000;
+}
+
+else if(n >= 51 && n <= 100){
+total = n * 600;
+}
+
+else if(n >= 101 && n <= 199){
+total = n * 500;
+}
+
+else{
+price.innerText = "پەیوەندی بکە";
+return;
+}
+
+price.innerText =
+total.toLocaleString() + " IQD";
+
+});
+
+/* ================= MODAL ================= */
+
+function openModal(card){
+
+let img = card.querySelector("img");
+
+document.getElementById("modal-img").src =
+img.src;
+
+document.getElementById("modal").style.display =
+"flex";
+
+}
+
+function closeModal(){
+
+document.getElementById("modal").style.display =
+"none";
+
+}
+
+/* ================= SLIDER ================= */
+
+const track = document.getElementById("track");
+const slides = document.querySelectorAll(".slide");
+const dotsContainer = document.getElementById("dots");
+
+let current = 0;
+
+// create dots
+slides.forEach((_, i) => {
+  const dot = document.createElement("button");
+  dot.classList.add("dot");
+
+  if (i === 0) dot.classList.add("active");
+
+  dot.addEventListener("click", () => {
+    current = i;
+    updateSlider();
+  });
+
+  dotsContainer.appendChild(dot);
+});
+
+function updateSlider() {
+  track.style.transform = `translateX(-${current * 100}%)`;
+
+  document.querySelectorAll(".dot").forEach((dot, i) => {
+    dot.classList.toggle("active", i === current);
+  });
+}
+
+// auto slide
+setInterval(() => {
+  current = (current + 1) % slides.length;
+  updateSlider();
+}, 3500);
+/* ================= HERO TITLE EFFECT ================= */
+
+class TextScramble {
+
+constructor(el){
+
+this.el = el
+
+this.chars =
+'!<>-_\\/[]{}—=+*^?#________'
+
+this.update =
+this.update.bind(this)
+
+}
+
+setText(newText){
+
+const oldText =
+this.el.innerText
+
+const length =
+Math.max(
+oldText.length,
+newText.length
+)
+
+const promise =
+new Promise(
+(resolve)=>
+this.resolve = resolve
+)
+
+this.queue = []
+
+for(let i=0;i<length;i++){
+
+const from =
+oldText[i] || ''
+
+const to =
+newText[i] || ''
+
+const start =
+Math.floor(
+Math.random()*40
+)
+
+const end =
+start +
+Math.floor(
+Math.random()*40
+)
+
+this.queue.push({
+from,
+to,
+start,
+end
+})
+
+}
+
+cancelAnimationFrame(
+this.frameRequest
+)
+
+this.frame = 0
+
+this.update()
+
+return promise
+
+}
+
+update(){
+
+let output = ''
+let complete = 0
+
+for(
+let i=0,
+n=this.queue.length;
+i<n;
+i++
+){
+
+let {
+from,
+to,
+start,
+end,
+char
+} = this.queue[i]
+
+if(this.frame >= end){
+
+complete++
+output += to
+
+}
+
+else if(this.frame >= start){
+
+if(
+!char ||
+Math.random() < 0.28
+){
+
+char =
+this.randomChar()
+
+this.queue[i].char =
+char
+
+}
+
+output +=
+`<span class="dud">${char}</span>`
+
+}
+
+else{
+
+output += from
+
+}
+
+}
+
+this.el.innerHTML = output
+
+if(
+complete ===
+this.queue.length
+){
+
+this.resolve()
+
+}
+
+else{
+
+this.frameRequest =
+requestAnimationFrame(
+this.update
+)
+
+this.frame++
+
+}
+
+}
+
+randomChar(){
+
+return this.chars[
+Math.floor(
+Math.random() *
+this.chars.length
+)
+]
+
+}
+
+}
+
+/* ================= WORDS ================= */
+
+const phrases = [
+
+'Tree Family',
+
+'Family Tree',
+
+'Luxury Design',
+
+'Modern Style',
+    
+'ب گونجاوترین بها',
+
+'HD Quality',
+
+'دارین بنەمالا',
+
+'1000+ Names'
+
+]
+
+const text =
+document.querySelector(
+'.scramble-text'
+)
+
+const fx =
+new TextScramble(text)
+
+let counter = 0
+
+const next = ()=>{
+
+fx.setText(
+phrases[counter]
+).then(()=>{
+
+setTimeout(
+next,
+1800
+)
+
+})
+
+counter =
+(counter + 1)
+%
+phrases.length
+
+}
+
+next()
+    
+    
+    //* ===بەشی تایپینگ===*//
+    
+const words = [
+  { text: "سندی", class: "color1" },
+  { text: "بەرواری ", class: "color1" },
+  { text: "سلیڤانەی ", class: "color3" },
+  { text: "دوسکێ ", class: "color6" },
+  { text: "رێکانی ", class: "color5" },
+  { text: "ئالێشکێ", class: "color2" },
+  { text: "گولی", class: "color2" },
+  { text: "بێرسێڤێ", class: "color3" },
+  { text: "بێخەبارێ", class: "color4" },
+  { text: "داسيکێ", class: "color5" },
+  { text: "زیباری", class: "color5" },
+  { text: "دەحلکا چۆنکیا", class: "color6" },
+  { text: "دێرێ", class: "color7" },
+  { text: "سندی", class: "color7" },
+  { text: "سنداڤا", class: "color8" },
+  { text: "نێروەی", class: "color8" },
+  { text: "سەر سیلاڤکێ", class: "color9" },
+  { text: "گەلی دێرگەل", class: "color10" },
+  { text: "گوندیک ئەیوب", class: "color1" },
+  { text: "کەرپتێ", class: "color2" },
+  { text: "لێڤۆ", class: "color3" },
+  { text: "مامیسا", class: "color4" },
+  { text: "سورچی", class: "color4" },
+  { text: "ناڤ کەندالا", class: "color5" },
+  { text: "هارینا", class: "color6" },
+  { text: "هیزاوا", class: "color7" },
+  { text: "یوسف ئاڤا", class: "color8" },
+
+  { text: "بیلێکی", class: "color9" },
+  { text: "کەرپێتێ بلێکی", class: "color10" },
+
+  { text: "میچۆلی", class: "color1" },
+  { text: "خەرابێ", class: "color2" },
+  { text: "قەسرۆک", class: "color3" },
+  { text: "مێرگەشیش", class: "color4" },
+
+  { text: "نێری", class: "color5" },
+  { text: "داحلک", class: "color6" },
+  { text: "دەرکارا نێری", class: "color7" },
+  { text: "دێرجەلال", class: "color8" },
+  { text: "ستاڤلان", class: "color9" },
+  { text: "گوندک", class: "color10" },
+
+  { text: "سۆفی", class: "color1" },
+  { text: "ئەڤلهێ", class: "color2" },
+  { text: "بەرکەڤرێ", class: "color3" },
+  { text: "بێ شیلکێ", class: "color4" },
+  { text: "پیربلا", class: "color5" },
+  { text: "جەمتری", class: "color6" },
+  { text: "جەمێ مسلمەتێ", class: "color7" },
+  { text: "چەمکێ دەلال", class: "color8" },
+  { text: "دێرینکێ", class: "color9" },
+  { text: "زۆراڤا", class: "color10" },
+  { text: "هۆدانێ", class: "color1" },
+
+  { text: "پیساخا", class: "color2" },
+  { text: "ئاڤا گیزێ", class: "color3" },
+  { text: "بازنگیرا", class: "color4" },
+  { text: "پەترومە", class: "color5" },
+  { text: "دارهۆزان", class: "color6" },
+  { text: "گرک سیندی", class: "color7" },
+  { text: "گەورک", class: "color8" },
+  { text: "کەلوک", class: "color9" },
+  { text: "کیرکرانک", class: "color10" },
+  { text: "مارسيس", class: "color1" },
+
+  { text: "بۆصەلی", class: "color2" },
+  { text: "بوصه لي", class: "color3" },
+  { text: "زێوکا بوصلي", class: "color4" },
+
+  { text: "شیڤارمێنی", class: "color5" },
+  { text: "ئاڤگەنی", class: "color6" },
+  { text: "باگۆلاتکی", class: "color7" },
+  { text: "بەرکڤرێ", class: "color8" },
+  { text: "تیکا", class: "color9" },
+  { text: "خرخەبکا", class: "color10" },
+  { text: "خوەک سندی", class: "color1" },
+  { text: "زێوکێ", class: "color2" },
+  { text: "سەرکو", class: "color3" },
+  { text: "سپیندارۆکێ", class: "color4" },
+
+  { text: "مامێز دينی", class: "color5" },
+  { text: "باجلێ", class: "color6" },
+  { text: "بەهراڤا", class: "color7" },
+  { text: "تاوکێ", class: "color8" },
+  { text: "تێرک", class: "color9" },
+  { text: "تێرک عەرەب", class: "color10" },
+  { text: "تێرک سمۆ", class: "color1" },
+  { text: "تێریک حەسەن", class: "color2" },
+  { text: "خرابابکێ", class: "color3" },
+  { text: "خێلافتێ", class: "color4" },
+  { text: "عەمەر ئاغا", class: "color5" },
+  { text: "کەبەرۆک", class: "color6" },
+
+  { text: "بێنستانی", class: "color7" },
+  { text: "بەرزیر", class: "color8" },
+  { text: "چەم مشکو", class: "color9" },
+  { text: "داحلک گوندک", class: "color10" },
+  { text: "داحلک ملک", class: "color1" },
+  { text: "دەشت ماسەک قەرا", class: "color2" },
+  { text: "دەشت ماسەک مەلا", class: "color3" },
+  { text: "دۆرنەخ", class: "color4" },
+  { text: "ڕەبەنکا", class: "color5" },
+  { text: "متیفا", class: "color6" },
+  { text: "وار سۆر", class: "color7" },
+  { text: "هەوریز", class: "color8" },
+  { text: "هەڤشنی", class: "color9" },
+  { text: "جەم مشکۆ", class: "color10" },
+  { text: "کیزاڤا", class: "color1" },
+  { text: "کەرنێ", class: "color2" },
+
+  { text: "پەرەخی", class: "color3" },
+
+  { text: "مالا ئەجەمێ", class: "color4" },
+  { text: "باندڕۆ", class: "color5" },
+  { text: "بانکا ژوری", class: "color6" },
+  { text: "بانکا ژێری", class: "color7" },
+  { text: "بانکا مالا شێخێ", class: "color8" },
+  { text: "بانکا شیخی", class: "color9" },
+  { text: "دەرکار", class: "color10" },
+  { text: "کیرانش", class: "color1" },
+  { text: "مێرگێ", class: "color2" },
+  { text: "مینینی", class: "color3" }
+];
+
+let i = 0;
+let j = 0;
+let deleting = false;
+
+function type() {
+  let el = document.getElementById("text");
+  let current = words[i];
+
+  el.className = current.class;
+
+  let txt = current.text;
+
+  if (!deleting) {
+    el.innerHTML = txt.substring(0, j++);
+  } else {
+    el.innerHTML = txt.substring(0, j--);
+  }
+
+  let speed = deleting ? 70 : 120;
+
+  if (!deleting && j === txt.length + 1) {
+    deleting = true;
+    speed = 900;
+  }
+
+  if (deleting && j === 0) {
+    deleting = false;
+    i = (i + 1) % words.length;
+  }
+
+  setTimeout(type, speed);
+}
+
+type();
+</script>
+
+</body>
+</html>
