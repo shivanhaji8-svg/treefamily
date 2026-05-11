@@ -1,1 +1,15 @@
+backend:
+  name: git-gateway
+  branch: main
 
+media_folder: "images"
+public_folder: "/images"
+
+collections:
+  - name: "gallery"
+    label: "گالەری دارین"
+    folder: "content/gallery"
+    create: true
+    fields:
+      - { label: "ناونیشان", name: "title", widget: "string" }
+      - { label: "وێنە", name: "image", widget: "image" }
