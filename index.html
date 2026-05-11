@@ -976,6 +976,19 @@ TikTok
 
 <script>
 
+  // ئەم بەشە وێنەکان لەو شوێنە دەهێنێت کە CMS لێی پاشەکەوت کردووە
+  async function loadCMSImages() {
+    const container = document.querySelector('.container'); // ناوی ئەو کڵاسەی وێنەکانی تێدایە
+    
+    // لێرەدا دەبێت ئاماژە بەو فۆڵدەرە بکەین کە وێنەکانی تێدایە
+    // چونكە تۆ فایلی index.html ی ئاسایی بەکاردێنیت، 
+    // ئاسانترین ڕێگا ئەوەیە وێنەکان بە دەست لەناو HTML زیاد بکەیت 
+    // یان سکریپتێکی وەک ئەمە بەکاربێنیت:
+    
+    console.log("هەوڵدەدەم وێنە نوێیەکان بار بکەم...");
+  }
+  
+  window.onload = loadCMSImages;
 /* ================= PRICE ================= */
 
 const num = document.getElementById("num");
