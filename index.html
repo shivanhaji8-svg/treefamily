@@ -5,6 +5,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="google-site-verification" content="cKLb-N-nZA8lf5sk4eJuC3OCOsTTofOl8eCA5RUasaM" />
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+
+
 
 
 <title>Tree Family | دارین بنەمالا</title>
@@ -1471,6 +1474,18 @@ function type() {
 }
 
 type();
+
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on("init", user => {
+      if (!user) {
+        window.netlifyIdentity.on("login", () => {
+          document.location.href = "/admin/";
+        });
+      }
+    });
+  }
+
+  
 </script>
 
 </body>
