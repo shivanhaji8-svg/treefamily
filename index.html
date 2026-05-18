@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="ku" dir="rtl">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="دیزاینی تایبەتی داری بنەمالا - کوالیتی بەرز بۆ خێزان">
 <meta name="google-site-verification" content="cKLb-N-nZA8lf5sk4eJuC3OCOsTTofOl8eCA5RUasaM" />
-<script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
+<script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+  <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
 <title>Family Kurd Name | دیزاینی داری بنەمالا</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,16 +19,16 @@
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <link rel="icon" type="image/x-icon" href="../images/tree.png">
 <!-- Google Fonts - Vazirmatn (Kurdish Sans) -->
-<script src="https://unpkg.com/@supabase/supabase-js@2"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
 <!-- Font Awesome -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="../style.css">
 
 <style>
+
 * {
   margin: 0;
   padding: 0;
@@ -73,7 +75,7 @@ body {
 }
 
 .navbar.scrolled {
-  padding: 0.5rem 2rem;
+  padding: 0.4rem 1rem;
   box-shadow: 0 4px 20px rgba(0,0,0,0.08);
 }
 
@@ -1626,7 +1628,7 @@ footer {
   }
 }
       .scramble-title{
-font-size:3.5rem;
+font-size:1.5rem;
 line-height:1.2;
 font-weight:900;
 margin-bottom:1rem;
@@ -1643,6 +1645,7 @@ min-width:320px;
 opacity:0.45;
 color:#2f6b4f;
 }
+
 
 
 </style>
@@ -1709,7 +1712,7 @@ color:#2f6b4f;
     </div>
 
     <div class="hero-image animate-on-scroll">
-      <img src="../images/artboard3-80.jpg" alt="دیزاینی داری بنەمالا">
+      <img src="../images/img3.jpg" alt="دیزاینی داری بنەمالا">
 
       <div class="hero-cards">
         <div class="hero-card">
@@ -1720,13 +1723,11 @@ color:#2f6b4f;
           <h3>٢٠+</h3>
           <p>نموونە</p>
         </div>
-          
-          
-   <div class="hero-card" style="text-align:center; margin:20px;">
-  👁 بینەرەکان: <span id="visitorCount">0</span>
+        
+         <div class="hero-card" >
+  👁 بینەرەکان: <h3><span id="visitorCount">0</span></h3>
 </div>
-          
-          
+      
       </div>
     </div>
   </div>
@@ -2745,6 +2746,12 @@ function setupMarquee() {
     });
   };
 
+  createItems(); // جاری یەکەم
+  createItems(); // جاری دووەم بۆ ئەوەی جووڵەکە بێ کۆتایی دیار بێت
+}
+
+// بانگکردنی فەنکشنەکە لەکاتی باربوونی پەڕەکە
+setupMarquee();
   
   // ================= visitor =================
 const client = window.supabase.createClient(
@@ -2770,6 +2777,7 @@ async function addVisitor() {
 }
 
 addVisitor();
+
 </script>
 
 
